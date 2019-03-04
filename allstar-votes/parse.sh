@@ -9,4 +9,9 @@ for i in 17 18 19; do
         cat parsed5 >> votes$i.csv
         rm parsed? parsed
     done
+    # Sort each csv
+    sort -k2 -n -t, votes$i.csv > new.csv
+    rm votes$i.csv
+    cat new.csv > votes$i.csv
+    rm new.csv
 done
