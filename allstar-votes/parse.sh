@@ -1,3 +1,4 @@
+# Make 3 seperate csv files with (player_name, number of votes), one file for each season
 for i in 17 18 19; do
     for j in *$i.html; do
         grep -o "html\">[A-Za-z]* [A-Za-z]*</a></td><td class=\"right \" data-stat=\"fan_votes\">.*fan_rank" $j > parsed
@@ -15,3 +16,16 @@ for i in 17 18 19; do
     cat new.csv > votes$i.csv
     rm new.csv
 done
+
+# Make a file called 'players.txt' with all the players from 17-19 seasons (no duplicates)
+cat votes17.csv > votes.csv
+cat votes18.csv >> votes.csv
+cat votes19.csv >> votes.csv
+sort -k1 -n -t, votes.csv > new.csv
+rm votes.csv
+cat new.csv > votes.csv
+rm new.csv
+sed -r 's/,[0-9]*//g' votes.csv > tmp.txt
+rm votes.csv
+python players-parse.py < tmp.txt > players.txt
+rm tmp.txt
