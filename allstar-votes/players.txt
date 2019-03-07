@@ -3,6 +3,7 @@ Aaron Gordon
 Aaron Holiday
 Abdel Nader
 Adreian Payne
+A.J. Hammons
 Alan Anderson
 Alan Williams
 Alec Burks
@@ -12,6 +13,7 @@ Alex Caruso
 Alexis Ajinca
 Alex Len
 Alex Poythress
+Al-Farouq Aminu
 Alfonzo McKinnie
 Al Horford
 Alize Johnson
@@ -96,6 +98,10 @@ Chris McCullough
 Chris Paul
 Christian Wood
 CJ McCollum
+C.J. Miles
+C.J. Watson
+C.J. Wilcox
+C.J. Williams
 Clint Capela
 Cody Zeller
 Cole Aldrich
@@ -111,6 +117,7 @@ Damien Wilkins
 Damion Lee
 Damjan Rudez
 Damyean Dotson
+D'Angelo Russell
 Daniel Hamilton
 Daniel Ochefu
 Daniel Theis
@@ -130,9 +137,12 @@ David Nwaba
 David West
 Davis Bertans
 Davon Reed
+De'Aaron Fox
 Deandre Ayton
+DeAndre' Bembry
 DeAndre Jordan
 DeAndre Liggins
+De'Anthony Melton
 Dejounte Murray
 Delon Wright
 DeMarcus Cousins
@@ -140,10 +150,12 @@ DeMar DeRozan
 DeMarre Carroll
 Demetrius Jackson
 Dennis Schroder
+Dennis Smith Jr.
 Denzel Valentine
 Deonte Burton
 Deron Williams
 Derrick Favors
+Derrick Jones Jr.
 Derrick Rose
 Derrick Walton
 Derrick White
@@ -151,17 +163,21 @@ Derrick Williams
 Devin Booker
 Devin Harris
 Devin Robinson
+Devonte' Graham
 Dewayne Dedmon
 Deyonta Davis
 Diamond Stone
 Dillon Brooks
 Dion Waiters
 Dirk Nowitzki
+D.J. Augustin
+D.J. Wilson
 Domantas Sabonis
 Donatas Motiejunas
 Donovan Mitchell
 Donte DiVincenzo
 Donte Grantham
+Dorian Finney-Smith
 Doug McDermott
 Dragan Bender
 Draymond Green
@@ -186,17 +202,21 @@ Eric Griffin
 Eric Moreland
 Erik McCree
 Ersan Ilyasova
+E'Twaun Moore
 Evan Fournier
 Evan Turner
 Festus Ezeli
 Frank Jackson
 Frank Kaminsky
+Frank Mason III
 Frank Ntilikina
 Fred VanVleet
 Furkan Korkmaz
 Garrett Temple
 Gary Clark
 Gary Harris
+Gary Payton II
+Gary Trent Jr.
 George Hill
 George King
 Georges Niang
@@ -204,6 +224,7 @@ Georgios Papagiannis
 Gerald Green
 Gerald Henderson
 Giannis Antetokounmpo
+Glenn Robinson III
 Goran Dragic
 Gordon Hayward
 Gorgui Dieng
@@ -251,7 +272,9 @@ James Ennis
 James Harden
 James Johnson
 James Jones
+James Michael McAdoo
 James Nunnally
+James Webb III
 James Young
 Jamil Wilson
 JaMychal Green
@@ -259,6 +282,7 @@ Jared Dudley
 Jared Sullinger
 Jared Terrell
 Jarell Martin
+Jaren Jackson Jr.
 Jarnell Stokes
 Jaron Blossomgame
 Jarred Vanderbilt
@@ -283,6 +307,8 @@ Jerome Robinson
 Jerryd Bayless
 Jevon Carter
 Jimmy Butler
+J.J. Barea
+J.J. Redick
 Joakim Noah
 Jodie Meeks
 Joe Chealey
@@ -299,6 +325,8 @@ John Collins
 John Henson
 John Holland
 John Jenkins
+John Lucas III
+Johnny O'Bryant
 John Wall
 Jonah Bolden
 Jonas Jerebko
@@ -320,6 +348,8 @@ Josh Magette
 Josh McRoberts
 Josh Okogie
 Josh Richardson
+J.P. Macura
+J.R. Smith
 Jrue Holiday
 Juan Hernangomez
 Julius Randle
@@ -332,13 +362,17 @@ Justin Patton
 Justise Winslow
 Jusuf Nurkic
 Kadeem Allen
+Karl-Anthony Towns
 Kawhi Leonard
 Kay Felder
 Keenan Evans
+Keita Bates-Diop
 Kelly Olynyk
+Kelly Oubre Jr.
 Kemba Walker
 Kenneth Faried
 Kenrich Williams
+Kentavious Caldwell-Pope
 Kent Bazemore
 Kevin Durant
 Kevin Huerter
@@ -349,6 +383,7 @@ Kevon Looney
 Khem Birch
 Khris Middleton
 Khyri Thomas
+K.J. McDaniels
 Klay Thompson
 Kobi Simmons
 Kosta Koufos
@@ -361,6 +396,7 @@ Kyle Collinsworth
 Kyle Korver
 Kyle Kuzma
 Kyle Lowry
+Kyle O'Quinn
 Kyle Singler
 Kyle Wiltjer
 Kyrie Irving
@@ -369,6 +405,7 @@ Lance Stephenson
 Lance Thomas
 Landry Shamet
 Langston Galloway
+Larry Nance Jr.
 Lauri Markkanen
 Lavoy Allen
 Leandro Barbosa
@@ -379,6 +416,7 @@ Lonzo Ball
 Lorenzo Brown
 Lou Williams
 Lucas Nogueira
+Luc Mbah a Moute
 Luis Montero
 Luis Scola
 Luka Doncic
@@ -399,6 +437,7 @@ Marc Gasol
 Marcin Gortat
 Marco Belinelli
 Marcus Derrickson
+Marcus Georges-Hunt
 Marcus Morris
 Marcus Paige
 Marcus Smart
@@ -411,6 +450,7 @@ Marquese Chriss
 Marreese Speights
 Marshall Plumlee
 MarShon Brooks
+Marvin Bagley III
 Marvin Williams
 Mason Plumlee
 Matt Barnes
@@ -421,9 +461,13 @@ Maurice Harkless
 Maurice Ndour
 Maxi Kleber
 Melvin Frazier
+Metta World Peace
 Meyers Leonard
 Michael Beasley
+Michael Carter-Williams
 Michael Gbinije
+Michael Kidd-Gilchrist
+Michael Porter Jr.
 Michael Young
 Mikal Bridges
 Mike Conley
@@ -448,7 +492,9 @@ Mo Williams
 Myke Henry
 Myles Turner
 Nate Wolters
+Naz Mitrou-Long
 Nemanja Bjelica
+Nene
 Nerlens Noel
 Nick Collison
 Nick Young
@@ -480,6 +526,7 @@ Paul Pierce
 Paul Zipser
 Pierre Jackson
 PJ Dozier
+P.J. Tucker
 Quincy Acy
 Quincy Pondexter
 Quinn Cook
@@ -498,6 +545,7 @@ Reggie Jackson
 Richard Jefferson
 Richaun Holmes
 Ricky Rubio
+R.J. Hunter
 Robert Covington
 Robert Williams
 Robin Lopez
@@ -506,6 +554,8 @@ Rodney Hood
 Rodney McGruder
 Rodney Stuckey
 Ron Baker
+Rondae Hollis-Jefferson
+Royce O'Neale
 Roy Hibbert
 Rudy Gay
 Rudy Gobert
@@ -525,6 +575,7 @@ Sergio Rodriguez
 Seth Curry
 Shabazz Muhammad
 Shabazz Napier
+Shai Gilgeous-Alexander
 Shake Milton
 Shane Larkin
 Shaquille Harrison
@@ -559,8 +610,13 @@ Thomas Welsh
 Thon Maker
 Tiago Splitter
 Tim Frazier
+Tim Hardaway Jr.
 Timofey Mozgov
+Timothe Luwawu-Cabarrot
 Tim Quarterman
+T.J. Leaf
+T.J. McConnell
+T.J. Warren
 Tobias Harris
 Tomas Satoransky
 Tony Allen
@@ -577,6 +633,7 @@ Trevor Booker
 Trey Burke
 Trey Lyles
 Tristan Thompson
+Troy Brown Jr.
 Troy Caupain
 Troy Daniels
 Troy Williams
@@ -599,13 +656,16 @@ Vince Carter
 Vince Edwards
 Vince Hunter
 Wade Baldwin
+Walt Lemon Jr.
 Wayne Ellington
 Wayne Selden
+Wendell Carter Jr.
 Wenyen Gabriel
 Wesley Iwundu
 Wesley Johnson
 Wesley Matthews
 Will Barton
+Willie Cauley-Stein
 Willie Reed
 Willy Hernangomez
 Wilson Chandler

@@ -1,8 +1,10 @@
 Mindaugas Kuzminskas,4
 Antonius Cleveland,19
+James Webb III,56
 Amile Jefferson,70
 Andrew White,104
 Reggie Hearn,108
+R.J. Hunter,133
 Jeff Withey,136
 Kay Felder,185
 Yakuba Ouattara,195
@@ -15,6 +17,7 @@ Edmond Sumner,444
 Charles Cooke,446
 Julyan Stone,453
 Nate Wolters,514
+C.J. Wilcox,529
 Jacob Pullen,548
 Garrett Temple,580
 Wayne Selden,581
@@ -38,6 +41,8 @@ James Young,791
 Jacob Wiley,794
 Ivan Rabb,796
 Alan Williams,823
+Gary Payton II,834
+Naz Mitrou-Long,846
 Torrey Craig,848
 Tyler Lydon,850
 Derrick Walton,862
@@ -62,6 +67,8 @@ Kobi Simmons,1055
 Justin Patton,1081
 Brice Johnson,1090
 Isaiah Whitehead,1091
+Johnny O'Bryant,1109
+Derrick Jones Jr.,1115
 Malcolm Miller,1143
 Frank Jackson,1144
 Terrence Ross,1177
@@ -78,14 +85,17 @@ Ian Clark,1266
 Jon Leuer,1268
 Mangok Mathiang,1268
 Dwight Buycks,1286
+Dorian Finney-Smith,1291
 Shabazz Muhammad,1303
 Devin Harris,1352
 Sindarius Thornwell,1354
+Royce O'Neale,1364
 Deyonta Davis,1367
 Solomon Hill,1380
 Alfonzo McKinnie,1467
 Chris McCullough,1487
 Nik Stauskas,1493
+C.J. Williams,1522
 Rashad Vaughn,1544
 Sean Kilpatrick,1555
 Miles Plumlee,1577
@@ -98,9 +108,11 @@ Tony Bradley,1692
 Dakari Johnson,1694
 Troy Daniels,1694
 Wesley Johnson,1718
+Timothe Luwawu-Cabarrot,1722
 Daniel Hamilton,1727
 James Ennis,1732
 Raul Neto,1742
+Glenn Robinson III,1775
 Pat Connaughton,1775
 Joe Young,1790
 Nerlens Noel,1799
@@ -139,13 +151,16 @@ Alec Burks,2300
 Anthony Brown,2306
 JaMychal Green,2306
 Antonio Blakeney,2328
+E'Twaun Moore,2338
 Chandler Parsons,2353
 Justin Jackson,2356
 Troy Williams,2386
+Frank Mason III,2389
 Marvin Williams,2393
 Henry Ellenson,2396
 Ish Smith,2425
 Jamel Artis,2489
+Marcus Georges-Hunt,2505
 DeAndre Liggins,2512
 Darrell Arthur,2523
 Ian Mahinmi,2534
@@ -156,6 +171,7 @@ Mason Plumlee,2622
 Wesley Matthews,2624
 Stanley Johnson,2695
 Darius Miller,2707
+D.J. Wilson,2713
 Joel Bolomboy,2716
 Isaiah Hicks,2720
 Vander Blue,2765
@@ -170,6 +186,7 @@ Kyle Singler,2907
 Shabazz Napier,2921
 Dante Exum,2929
 Noah Vonleh,2968
+DeAndre' Bembry,3000
 Paul Zipser,3020
 Wade Baldwin,3056
 Amir Johnson,3068
@@ -179,6 +196,7 @@ Skal Labissiere,3107
 Marreese Speights,3110
 Justise Winslow,3113
 Taurean Prince,3149
+Michael Carter-Williams,3194
 Harry Giles,3200
 Derrick White,3228
 Brandon Paul,3256
@@ -189,7 +207,9 @@ Thabo Sefolosha,3330
 Cody Zeller,3332
 Joe Johnson,3363
 Tomas Satoransky,3423
+D.J. Augustin,3499
 Jonas Jerebko,3505
+A.J. Hammons,3584
 Gorgui Dieng,3611
 Semi Ojeleye,3673
 Richaun Holmes,3689
@@ -202,6 +222,7 @@ Luke Kennard,3778
 Zach Collins,3832
 Jason Terry,3862
 Montrezl Harrell,3892
+T.J. Leaf,3903
 Ante Zizic,3905
 Ekpe Udoh,3951
 Buddy Hield,4002
@@ -225,6 +246,7 @@ Ryan Arcidiacono,4465
 Richard Jefferson,4501
 Yogi Ferrell,4502
 Shane Larkin,4545
+James Michael McAdoo,4564
 Matt Costello,4598
 Juan Hernangomez,4605
 Bobby Portis,4638
@@ -268,6 +290,7 @@ John Collins,6509
 Tarik Black,6575
 Patrick Beverley,6725
 Delon Wright,6757
+Kyle O'Quinn,6764
 Frank Kaminsky,6875
 Quinn Cook,6902
 Ed Davis,6920
@@ -279,12 +302,14 @@ Josh Jackson,7263
 Nick Collison,7445
 James Johnson,7535
 Joakim Noah,7548
+Willie Cauley-Stein,7657
 Rodney Hood,7742
 Tony Allen,7742
 Jahlil Okafor,7831
 Nicolas Brussino,7945
 Alexis Ajinca,8007
 Kelly Olynyk,8008
+Rondae Hollis-Jefferson,8255
 Willy Hernangomez,8439
 Doug McDermott,8558
 Tyson Chandler,8573
@@ -293,6 +318,7 @@ Furkan Korkmaz,8823
 Iman Shumpert,8894
 Cole Aldrich,8972
 Evan Fournier,9177
+Michael Kidd-Gilchrist,9353
 Markieff Morris,9492
 Reggie Jackson,9937
 Jeff Teague,9947
@@ -306,6 +332,7 @@ Arron Afflalo,10621
 Nemanja Bjelica,10690
 Kadeem Allen,10822
 Thaddeus Young,10960
+Al-Farouq Aminu,11032
 Terrance Ferguson,11378
 Josh Hart,11383
 Markelle Fultz,11551
@@ -317,6 +344,7 @@ Josh Richardson,12167
 Zach Randolph,12280
 Daniel Theis,12290
 Danilo Gallinari,12296
+T.J. Warren,12473
 Derrick Favors,12491
 Nikola Vucevic,12734
 Quincy Acy,12948
@@ -329,20 +357,25 @@ Jakob Poeltl,13464
 Gerald Green,13500
 Jrue Holiday,13508
 Jerami Grant,13536
+Kentavious Caldwell-Pope,13760
 Kosta Koufos,13819
 Bryn Forbes,13878
 Channing Frye,14331
 Raymond Felton,14490
+T.J. McConnell,14657
 Dejounte Murray,15023
 Jamal Crawford,15414
 Taj Gibson,15417
 Norman Powell,15432
+Luc Mbah a Moute,15856
 Tyreke Evans,16138
 Ricky Rubio,16243
 Bojan Bogdanovic,16441
 John Henson,16459
 Kris Dunn,16981
+De'Aaron Fox,17127
 Terry Rozier,17728
+C.J. Miles,17766
 Seth Curry,17834
 Joe Ingles,18366
 Brook Lopez,18907
@@ -352,9 +385,12 @@ Avery Bradley,19318
 Georgios Papagiannis,20082
 Ersan Ilyasova,20404
 Bam Adebayo,21028
+Dennis Smith Jr.,21205
 Lance Stephenson,21254
 Patrick McCaw,21266
+P.J. Tucker,21879
 Courtney Lee,22226
+Nene,22502
 Marcin Gortat,23934
 Harrison Barnes,24636
 Marcus Morris,25191
@@ -363,6 +399,7 @@ Alex Abrines,25921
 Jusuf Nurkic,26211
 Milos Teodosic,26374
 Zach LaVine,27614
+Kelly Oubre Jr.,27847
 Domantas Sabonis,27989
 Frank Ntilikina,28456
 Marcus Smart,29252
@@ -371,6 +408,9 @@ Spencer Dinwiddie,30782
 Robert Covington,31097
 Aron Baynes,31523
 Nikola Mirotic,32075
+J.J. Barea,32164
+J.J. Redick,32874
+Larry Nance Jr.,33442
 Ryan Anderson,33494
 Davis Bertans,33674
 Bogdan Bogdanovic,33842
@@ -379,6 +419,7 @@ Otto Porter,36302
 Dario Saric,36736
 Patty Mills,36836
 Kyle Anderson,38335
+D'Angelo Russell,38712
 Malcolm Brogdon,39598
 Tobias Harris,40136
 Lauri Markkanen,43622
@@ -389,10 +430,12 @@ Julius Randle,48239
 Tristan Thompson,48564
 Danny Green,48661
 Vince Carter,49215
+J.R. Smith,49454
 Shaun Livingston,50631
 Rudy Gay,51456
 Myles Turner,52214
 Jae Crowder,55405
+Tim Hardaway Jr.,57357
 Jonas Valanciunas,62472
 Michael Beasley,62966
 Goran Dragic,63387
@@ -446,6 +489,7 @@ Damian Lillard,439462
 Isaiah Thomas,449091
 Kyle Kuzma,524927
 John Wall,542836
+Karl-Anthony Towns,552376
 Chris Paul,562428
 LaMarcus Aldridge,578853
 Lonzo Ball,607961
