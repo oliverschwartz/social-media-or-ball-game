@@ -71,6 +71,6 @@ for name in glob.glob("*.csv"):
     col_list = ['username']
     df = df[col_list]
     print(df.head())
-df.to_csv('processed/'+name)
+    df.to_csv('processed/'+name)
 
 
