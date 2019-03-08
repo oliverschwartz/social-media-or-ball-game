@@ -15,8 +15,6 @@ def draw_missing_data_table(df):
     missing_data = pd.concat([total, percent], axis=1, keys=['Total', 'Percent'])
     return missing_data
 
-
-
 # Plot learning curve
 def plot_learning_curve(estimator, title, X, y, ylim=None, cv=None,
                         n_jobs=1, train_sizes=np.linspace(.1, 1.0, 5)):
