@@ -67,5 +67,10 @@ def plot_validation_curve(estimator, title, X, y, param_name, param_range, ylim=
 
 #path = 'C:/Users/Matt/documents/senior/Networks/proj/381/ig/playerFollowing'  
 for name in glob.glob("*.csv"):
-	df = pd.read_csv(name, encoding='latin1');
-	print(df.head())
+    df = pd.read_csv(name, encoding='latin1')
+    col_list = ['username']
+    df = df[col_list]
+    print(df.head())
+df.to_csv('processed/'+name)
+
+
