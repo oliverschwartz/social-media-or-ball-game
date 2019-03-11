@@ -2,6 +2,9 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import glob
+import networkx as nx
+import matplotlib.pyplot as plt
+import pylab
 
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import learning_curve
@@ -65,12 +68,19 @@ def plot_validation_curve(estimator, title, X, y, param_name, param_range, ylim=
     plt.ylim(ylim)
 
 
-#path = 'C:/Users/Matt/documents/senior/Networks/proj/381/ig/playerFollowing'  
+#path = 'C:/Users/Matt/documents/senior/Networks/proj/381/ig/playerFollowing'
+names = []  
 for name in glob.glob("*.csv"):
+    names.append(name)
     df = pd.read_csv(name, encoding='latin1')
     col_list = ['username']
     df = df[col_list]
-    print(df.head())
+    #print(df.head())
     df.to_csv('processed/'+name, index = False)
 
+    
+G = nx.DiGraph()
+G.add_edges_from([('a', 'b')])
+nx.draw(G, with_labels = True)
+plt.show()
 
