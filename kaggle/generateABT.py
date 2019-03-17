@@ -68,20 +68,27 @@ def plot_validation_curve(estimator, title, X, y, param_name, param_range, ylim=
     plt.ylim(ylim)
 
 
-#path = 'C:/Users/Matt/documents/senior/Networks/proj/381/ig/playerFollowing'
+# Read in all the data from Database. Delete all rows that correspond
+# to players not on our list, or not from 2017 season
 names = pd.read_csv('players-complete.csv', encoding='latin1')
 names = names['name'].tolist()
 df = pd.read_csv('Seasons_Stats.csv', encoding='latin1')
 df = df.drop(columns = ['Unnamed: 0'])
 df = df[df['Player'].isin(names)]
-print(df.head(10))
 year = ['2017']
 df = df[df['Year'].isin(year)]
-print(df.head(10))
 df.to_csv('ABT.csv', index = False)
 
-
-
+# Read in data from nba.csv, nba_extra.csv (for 2018 season).
+# Clean up data, merge the two csvs to match format above
+# append the data to dataframe above
+newSeason = pd.read_csv('nba17-18/nba.csv', encoding='latin1')
+newSeasonExtra = pd.read_csv('nba17-18/nba_extra.csv', encoding='latin1')
+newSeason = newSeason.drop(columns = ['Rk'])
+i = 0
+for name in newSeason['Player']:
+    newSeason.loc[i, ['Player']] = name.split('\\')[0]
+    i = i + 1
 
 
 
