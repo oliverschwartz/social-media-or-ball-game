@@ -90,6 +90,17 @@ for name in newSeason['Player']:
     newSeason.loc[i, ['Player']] = name.split('\\')[0]
     i = i + 1
 
+for colName in newSeasonExtra.columns.tolist():
+    if colName == 'FG':
+        break
+    newSeasonExtra.drop(columns = [colName], inplace = True)
 
+stats18 = pd.concat([newSeason, newSeasonExtra], axis = 1, join = 'inner')
 
-    
+dfList = df.columns.tolist()
+stats18List = stats18.columns.tolist()
+for feature in dfList:
+    if feature not in stats18List:
+        print (feature)
+
+#newStats = pd.concat([df, stats18], ignore_index=True)
