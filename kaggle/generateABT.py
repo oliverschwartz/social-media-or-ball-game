@@ -69,7 +69,8 @@ def plot_validation_curve(estimator, title, X, y, param_name, param_range, ylim=
 
 
 # Read in all the data from Database. Delete all rows that correspond
-# to players not on our list, or not from 2017 season
+# to players not on our list, or not from 2017 season. Additionally,
+# delete the two blank columns
 names = pd.read_csv('players-complete.csv', encoding='latin1')
 names = names['name'].tolist()
 df = pd.read_csv('Seasons_Stats.csv', encoding='latin1')
@@ -77,11 +78,13 @@ df = df.drop(columns = ['Unnamed: 0'])
 df = df[df['Player'].isin(names)]
 year = ['2017']
 df = df[df['Year'].isin(year)]
-df.to_csv('ABT.csv', index = False)
+df = df.drop(columns = ['blanl', 'blank2'])
+
 
 # Read in data from nba.csv, nba_extra.csv (for 2018 season).
-# Clean up data, merge the two csvs to match format above
-# append the data to dataframe above
+# Clean up playername, merge the two csvs to match format above.
+# Add year column and delete two blank rows. append the data 
+# to dataframe above. Save in ABT.csv
 newSeason = pd.read_csv('nba17-18/nba.csv', encoding='latin1')
 newSeasonExtra = pd.read_csv('nba17-18/nba_extra.csv', encoding='latin1')
 newSeason = newSeason.drop(columns = ['Rk'])
@@ -94,13 +97,24 @@ for colName in newSeasonExtra.columns.tolist():
     if colName == 'FG':
         break
     newSeasonExtra.drop(columns = [colName], inplace = True)
-
 stats18 = pd.concat([newSeason, newSeasonExtra], axis = 1, join = 'inner')
+stats18.insert(loc = 0, column = 'Year',value = 2018.0)
+stats18.insert(loc = 6, column = 'GS', value = 'N/A')
+stats18.drop(columns = ['Unnamed: 19', 'Unnamed: 24'], inplace = True)
+fullStats = pd.concat([df, stats18], ignore_index=True)
+fullStats.to_csv('ABT.csv', index = False)
 
+
+# for testing purposes
 dfList = df.columns.tolist()
 stats18List = stats18.columns.tolist()
+print("in df not in new:")
 for feature in dfList:
     if feature not in stats18List:
+        print (feature)
+print("in new not df:")
+for feature in stats18List:
+    if feature not in dfList:
         print (feature)
 
 #newStats = pd.concat([df, stats18], ignore_index=True)
