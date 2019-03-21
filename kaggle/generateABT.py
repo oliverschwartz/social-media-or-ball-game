@@ -5,6 +5,7 @@ import glob
 import networkx as nx
 import matplotlib.pyplot as plt
 import pylab
+#from nba_scrape import NBA
 
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import learning_curve
@@ -116,5 +117,8 @@ print("in new not df:")
 for feature in stats18List:
     if feature not in dfList:
         print (feature)
+
+#random tests:
+#league = NBA()
 
 #newStats = pd.concat([df, stats18], ignore_index=True)
