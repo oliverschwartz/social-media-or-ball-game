@@ -103,6 +103,14 @@ stats18.insert(loc = 0, column = 'Year',value = 2018.0)
 stats18.insert(loc = 6, column = 'GS', value = 'N/A')
 stats18.drop(columns = ['Unnamed: 19', 'Unnamed: 24'], inplace = True)
 fullStats = pd.concat([df, stats18], ignore_index=True)
+print(fullStats.head(10))
+current_player = ''
+for index, playername in enumerate(fullStats['Player']):
+    if current_player == playername:
+        fullStats.drop(index, inplace = True)
+    current_player = playername
+print(fullStats.head(10))
+
 fullStats.to_csv('ABT.csv', index = False)
 
 
