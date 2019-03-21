@@ -85,7 +85,8 @@ df = df.drop(columns = ['blanl', 'blank2'])
 # Read in data from nba.csv, nba_extra.csv (for 2018 season).
 # Clean up playername, merge the two csvs to match format above.
 # Add year column and delete two blank rows. append the data 
-# to dataframe above. Save in ABT.csv
+# to dataframe above. Delete multiple entries for traded players
+# Save in ABT.csv
 newSeason = pd.read_csv('nba17-18/nba.csv', encoding='latin1')
 newSeasonExtra = pd.read_csv('nba17-18/nba_extra.csv', encoding='latin1')
 newSeason = newSeason.drop(columns = ['Rk'])
@@ -103,13 +104,11 @@ stats18.insert(loc = 0, column = 'Year',value = 2018.0)
 stats18.insert(loc = 6, column = 'GS', value = 'N/A')
 stats18.drop(columns = ['Unnamed: 19', 'Unnamed: 24'], inplace = True)
 fullStats = pd.concat([df, stats18], ignore_index=True)
-print(fullStats.head(10))
 current_player = ''
 for index, playername in enumerate(fullStats['Player']):
     if current_player == playername:
         fullStats.drop(index, inplace = True)
     current_player = playername
-print(fullStats.head(10))
 
 fullStats.to_csv('ABT.csv', index = False)
 
