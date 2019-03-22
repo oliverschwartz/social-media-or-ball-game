@@ -82,48 +82,61 @@ df = df[df['Year'].isin(year)]
 df = df.drop(columns = ['blanl', 'blank2'])
 
 
-# Read in data from nba.csv, nba_extra.csv (for 2018 season).
+# Read in data from nba.csv, nba_extra.csv (for 2018 and 2019 seasons).
 # Clean up playername, merge the two csvs to match format above.
 # Add year column and delete two blank rows. append the data 
 # to dataframe above. Delete multiple entries for traded players
 # Save in ABT.csv
-newSeason = pd.read_csv('nba17-18/nba.csv', encoding='latin1')
-newSeasonExtra = pd.read_csv('nba17-18/nba_extra.csv', encoding='latin1')
-newSeason = newSeason.drop(columns = ['Rk'])
-i = 0
-for name in newSeason['Player']:
-    newSeason.loc[i, ['Player']] = name.split('\\')[0]
-    i = i + 1
+seasons =["nba17-18", "nba18-19"]
+for season in seasons:
+    # Set variables
+    file = season + "/nba.csv"
+    file_extra = season + "/nba_extra.csv"
+    year = 2000 + float(season[-2:])
+    print(year)
 
-for colName in newSeasonExtra.columns.tolist():
-    if colName == 'FG':
-        break
-    newSeasonExtra.drop(columns = [colName], inplace = True)
-stats18 = pd.concat([newSeason, newSeasonExtra], axis = 1, join = 'inner')
-stats18.insert(loc = 0, column = 'Year',value = 2018.0)
-stats18.insert(loc = 6, column = 'GS', value = 'N/A')
-stats18.drop(columns = ['Unnamed: 19', 'Unnamed: 24'], inplace = True)
-fullStats = pd.concat([df, stats18], ignore_index=True)
-current_player = ''
-for index, playername in enumerate(fullStats['Player']):
-    if current_player == playername:
-        fullStats.drop(index, inplace = True)
-    current_player = playername
+    # Parse CSVs
+    newSeason = pd.read_csv(file, encoding='latin1')
+    newSeasonExtra = pd.read_csv(file_extra, encoding='latin1')
+    newSeason = newSeason.drop(columns = ['Rk'])
+    i = 0
+    for name in newSeason['Player']:
+        newSeason.loc[i, ['Player']] = name.split('\\')[0]
+        i = i + 1
+
+    for colName in newSeasonExtra.columns.tolist():
+        if colName == 'FG':
+            break
+        newSeasonExtra.drop(columns = [colName], inplace = True)
+    stats = pd.concat([newSeason, newSeasonExtra], axis = 1, join = 'inner')
+    stats.insert(loc = 0, column = 'Year',value = year)
+    stats.insert(loc = 6, column = 'GS', value = 'N/A')
+    stats.drop(columns = ['Unnamed: 19', 'Unnamed: 24'], inplace = True)
+    
+    if year == 2018:
+        fullStats = pd.concat([df, stats], ignore_index=True)
+    else: 
+        fullStats = pd.concat([fullStats, stats], ignore_index=True)
+    current_player = ''
+    for index, playername in enumerate(fullStats['Player']):
+        if current_player == playername:
+            fullStats.drop(index, inplace = True)
+        current_player = playername
 
 fullStats.to_csv('ABT.csv', index = False)
 
 
 # for testing purposes
-dfList = df.columns.tolist()
-stats18List = stats18.columns.tolist()
-print("in df not in new:")
-for feature in dfList:
-    if feature not in stats18List:
-        print (feature)
-print("in new not df:")
-for feature in stats18List:
-    if feature not in dfList:
-        print (feature)
+# dfList = df.columns.tolist()
+# stats18List = stats18.columns.tolist()
+# print("in df not in new:")
+# for feature in dfList:
+#     if feature not in stats18List:
+#         print (feature)
+# print("in new not df:")
+# for feature in stats18List:
+#     if feature not in dfList:
+#         print (feature)
 
 #random tests:
 #league = NBA()
