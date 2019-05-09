@@ -20,34 +20,43 @@ def findUsername(player, names: pd.DataFrame):
             return(names.at[i, 'Username'])
     return 'none'
 
-def orderMetrics(fullStats: pd.DataFrame, sMetrics: pd.DataFrame, names: pd.DataFrame):
+def findVotes(player, votes: pd.DataFrame):
+    for index, playerName in enumerate(votes['Player']):
+        if player == playerName:
+            return(votes.at[index, 'Votes'])
+    print('not found')
+    return 0
+
+def orderMetrics(fullStats: pd.DataFrame, sMetrics: pd.DataFrame, names: pd.DataFrame, votes17: pd.DataFrame, votes18: pd.DataFrame, votes19: pd.DataFrame):
     print('Start!!!')
-    metrics = np.zeros([1500,6])
-    newMets = pd.DataFrame(data = metrics, columns = ['Username', 'pagerank', 'eigen', 'load', 'betw', 'followers'])
+    metrics = np.zeros([1500,7])
+    newMets = pd.DataFrame(data = metrics, columns = ['Username', 'pagerank', 'eigen', 'load', 'betw', 'followers', 'Votes'])
     for index, player in enumerate(fullStats['Player']):
-            #if player == 'Brandon Ingram':
-            username = findUsername(player, names)
-            if username != 'none':
-                for index2, sUsername in enumerate(sMetrics['username']):
-                    if sUsername == username:
-                        #print('index: ', index, index2)
-                        #print(sMetrics.at[index2, 'username'])
-                        #print(sMetrics.at[index2, 'pagerank'])
-                        newMets.loc[index, ['Username']] = sMetrics.at[index2, 'username']
-                        #print(sMetrics.at[index2, 'username'])
-                        newMets.loc[index, ['pagerank']] = sMetrics.at[index2, 'pagerank']
-                        #print(sMetrics.at[index2, 'pagerank'])
-                        newMets.loc[index, ['eigen']] = sMetrics.at[index2, 'eigen']
-                        newMets.loc[index, ['load']] = sMetrics.at[index2, 'load']
-                        newMets.loc[index, ['betw']] = sMetrics.at[index2, 'betw']
-                        newMets.loc[index, ['followers']] = sMetrics.at[index2, 'followers']
-            else:
-                newMets.loc[index, ['Username']] = 0
-                newMets.loc[index, ['pagerank']] = 0
-                newMets.loc[index, ['eigen']] = 0
-                newMets.loc[index, ['load']] = 0
-                newMets.loc[index, ['betw']] = 0
-                newMets.loc[index, ['followers']] = 0
+        username = findUsername(player, names)
+        if username != 'none':
+            for index2, sUsername in enumerate(sMetrics['username']):
+                if sUsername == username:
+                    newMets.loc[index, ['Username']] = sMetrics.at[index2, 'username']
+                    newMets.loc[index, ['pagerank']] = sMetrics.at[index2, 'pagerank']
+                    newMets.loc[index, ['eigen']] = sMetrics.at[index2, 'eigen']
+                    newMets.loc[index, ['load']] = sMetrics.at[index2, 'load']
+                    newMets.loc[index, ['betw']] = sMetrics.at[index2, 'betw']
+                    newMets.loc[index, ['followers']] = sMetrics.at[index2, 'followers']
+        else:
+            newMets.loc[index, ['Username']] = 0
+            newMets.loc[index, ['pagerank']] = 0
+            newMets.loc[index, ['eigen']] = 0
+            newMets.loc[index, ['load']] = 0
+            newMets.loc[index, ['betw']] = 0
+            newMets.loc[index, ['followers']] = 0
+
+        if fullStats.at[index, 'Year'] == 2017:
+            newMets.loc[index, ['Votes']] = findVotes(player, votes17)
+        if fullStats.at[index, 'Year'] == 2018:
+            newMets.loc[index, ['Votes']] = findVotes(player, votes18)
+        if fullStats.at[index, 'Year'] == 2019:
+            newMets.loc[index, ['Votes']] = findVotes(player, votes19)
+
     return newMets
 
 
@@ -110,16 +119,16 @@ for season in seasons:
 names = pd.read_csv("../ig/scripts/names-username.csv")
 names = names[['Player', 'Username']]
 sMetrics = pd.read_csv("../ig/scripts/metrics.csv")
-mediaMetrics = orderMetrics(fullStats, sMetrics, names)
-fullStats.reset_index(drop = True, inplace = True)
-print(fullStats.head())
-print(mediaMetrics.head())
-fullStats = pd.concat([fullStats, mediaMetrics], axis = 1)
-print(fullStats.head())
-#add in votes
 votes17 = pd.read_csv("../allstar-votes/votes/votes17.csv")
 votes18 = pd.read_csv("../allstar-votes/votes/votes18.csv")
 votes19 = pd.read_csv("../allstar-votes/votes/votes19.csv")
+fullStats.reset_index(drop = True, inplace = True)
+mediaMetrics = orderMetrics(fullStats, sMetrics, names, votes17, votes18, votes19)
+fullStats = pd.concat([fullStats, mediaMetrics], axis = 1)
+print(fullStats.head())
+print(votes18.head())
+print(findVotes('Brandon Ingram', votes18))
+print(votes18.at[477,'Player'] == 'Brandon Ingram')
 
 
 fullStats.to_csv('ABT.csv', index = False)
