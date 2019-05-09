@@ -14,6 +14,43 @@ from sklearn.model_selection import cross_val_score
 from sklearn.linear_model import LogisticRegression
 
 
+def findUsername(player, names: pd.DataFrame):
+    for i, playerName in enumerate(names['Player']):
+        if player == playerName:
+            return(names.at[i, 'Username'])
+    return 'none'
+
+def orderMetrics(fullStats: pd.DataFrame, sMetrics: pd.DataFrame, names: pd.DataFrame):
+    print('Start!!!')
+    metrics = np.zeros([1500,6])
+    newMets = pd.DataFrame(data = metrics, columns = ['Username', 'pagerank', 'eigen', 'load', 'betw', 'followers'])
+    for index, player in enumerate(fullStats['Player']):
+            #if player == 'Brandon Ingram':
+            username = findUsername(player, names)
+            if username != 'none':
+                for index2, sUsername in enumerate(sMetrics['username']):
+                    if sUsername == username:
+                        #print('index: ', index, index2)
+                        #print(sMetrics.at[index2, 'username'])
+                        #print(sMetrics.at[index2, 'pagerank'])
+                        newMets.loc[index, ['Username']] = sMetrics.at[index2, 'username']
+                        #print(sMetrics.at[index2, 'username'])
+                        newMets.loc[index, ['pagerank']] = sMetrics.at[index2, 'pagerank']
+                        #print(sMetrics.at[index2, 'pagerank'])
+                        newMets.loc[index, ['eigen']] = sMetrics.at[index2, 'eigen']
+                        newMets.loc[index, ['load']] = sMetrics.at[index2, 'load']
+                        newMets.loc[index, ['betw']] = sMetrics.at[index2, 'betw']
+                        newMets.loc[index, ['followers']] = sMetrics.at[index2, 'followers']
+            else:
+                newMets.loc[index, ['Username']] = 0
+                newMets.loc[index, ['pagerank']] = 0
+                newMets.loc[index, ['eigen']] = 0
+                newMets.loc[index, ['load']] = 0
+                newMets.loc[index, ['betw']] = 0
+                newMets.loc[index, ['followers']] = 0
+    return newMets
+
+
 
 # Read in all the data from Database. Delete all rows that correspond
 # to players not on our list, or not from 2017 season. Additionally,
@@ -39,7 +76,7 @@ for season in seasons:
     file = season + "/nba.csv"
     file_extra = season + "/nba_extra.csv"
     year = 2000 + float(season[-2:])
-    print(year)
+    #print(year)
 
     # Parse CSVs
     newSeason = pd.read_csv(file, encoding='latin1')
@@ -68,6 +105,22 @@ for season in seasons:
         if current_player == playername:
             fullStats.drop(index, inplace = True)
         current_player = playername
+
+#Add in social media metrics
+names = pd.read_csv("../ig/scripts/names-username.csv")
+names = names[['Player', 'Username']]
+sMetrics = pd.read_csv("../ig/scripts/metrics.csv")
+mediaMetrics = orderMetrics(fullStats, sMetrics, names)
+fullStats.reset_index(drop = True, inplace = True)
+print(fullStats.head())
+print(mediaMetrics.head())
+fullStats = pd.concat([fullStats, mediaMetrics], axis = 1)
+print(fullStats.head())
+#add in votes
+votes17 = pd.read_csv("../allstar-votes/votes/votes17.csv")
+votes18 = pd.read_csv("../allstar-votes/votes/votes18.csv")
+votes19 = pd.read_csv("../allstar-votes/votes/votes19.csv")
+
 
 fullStats.to_csv('ABT.csv', index = False)
 
