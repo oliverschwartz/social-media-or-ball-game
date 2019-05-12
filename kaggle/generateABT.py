@@ -59,6 +59,23 @@ def orderMetrics(fullStats: pd.DataFrame, sMetrics: pd.DataFrame, names: pd.Data
 
     return newMets
 
+def perGame(fullStats: pd.DataFrame):
+    ppg = []
+    rpg = []
+    apg = []
+    stl = []
+    blk = []
+    mpg = []
+    for index, pts in enumerate(fullStats['PTS']):
+        ppg.append(pts / fullStats.at[index, 'G'])
+        rpg.append(fullStats.at[index, 'TRB'] / fullStats.at[index, 'G'])
+        apg.append(fullStats.at[index, 'AST'] / fullStats.at[index, 'G'])
+        stl.append(fullStats.at[index, 'STL'] / fullStats.at[index, 'G'])
+        blk.append(fullStats.at[index, 'BLK'] / fullStats.at[index, 'G'])
+        mpg.append(fullStats.at[index, 'MP'] / fullStats.at[index, 'G'])
+    pgStats =pd.DataFrame(np.column_stack([ppg, rpg, apg, stl, blk, mpg]), 
+                               columns=['PPG', 'RPG', 'APG', 'STLPG', 'BLKPG', 'MPG'])
+    return pd.concat([fullStats, pgStats], axis = 1)
 
 
 # Read in all the data from Database. Delete all rows that correspond
@@ -124,11 +141,10 @@ votes18 = pd.read_csv("../allstar-votes/votes/votes18.csv")
 votes19 = pd.read_csv("../allstar-votes/votes/votes19.csv")
 fullStats.reset_index(drop = True, inplace = True)
 mediaMetrics = orderMetrics(fullStats, sMetrics, names, votes17, votes18, votes19)
+fullStats = perGame(fullStats)
 fullStats = pd.concat([fullStats, mediaMetrics], axis = 1)
-print(fullStats.head())
-print(votes18.head())
-print(findVotes('Brandon Ingram', votes18))
-print(votes18.at[477,'Player'] == 'Brandon Ingram')
+
+
 
 
 fullStats.to_csv('ABT.csv', index = False)
