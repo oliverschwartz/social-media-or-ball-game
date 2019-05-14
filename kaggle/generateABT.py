@@ -14,6 +14,8 @@ from sklearn.model_selection import cross_val_score
 from sklearn.linear_model import LogisticRegression
 
 
+playerVotes = 2
+
 def findUsername(player, names: pd.DataFrame):
     for i, playerName in enumerate(names['Player']):
         if player == playerName:
@@ -136,9 +138,18 @@ for season in seasons:
 names = pd.read_csv("../ig/scripts/names-username.csv")
 names = names[['Player', 'Username']]
 sMetrics = pd.read_csv("../ig/scripts/metrics.csv")
-votes17 = pd.read_csv("../allstar-votes/votes/votes17.csv")
-votes18 = pd.read_csv("../allstar-votes/votes/votes18.csv")
-votes19 = pd.read_csv("../allstar-votes/votes/votes19.csv")
+if playerVotes == 1:
+    votes17 = pd.read_csv("../allstar-votes/player-votes/playervotes17.csv")
+    votes18 = pd.read_csv("../allstar-votes/player-votes/playervotes18.csv")
+    votes19 = pd.read_csv("../allstar-votes/player-votes/playervotes19.csv")
+if playerVotes == 2:
+    votes17 = pd.read_csv("../allstar-votes/vote-share/voteShare17.csv")
+    votes18 = pd.read_csv("../allstar-votes/vote-share/voteShare18.csv")
+    votes19 = pd.read_csv("../allstar-votes/vote-share/voteShare19.csv")
+else:
+    votes17 = pd.read_csv("../allstar-votes/votes/votes17.csv")
+    votes18 = pd.read_csv("../allstar-votes/votes/votes18.csv")
+    votes19 = pd.read_csv("../allstar-votes/votes/votes19.csv")
 fullStats.reset_index(drop = True, inplace = True)
 mediaMetrics = orderMetrics(fullStats, sMetrics, names, votes17, votes18, votes19)
 fullStats = perGame(fullStats)
@@ -146,7 +157,11 @@ fullStats = pd.concat([fullStats, mediaMetrics], axis = 1)
 
 
 
-
-fullStats.to_csv('ABT.csv', index = False)
+if playerVotes == 1:
+    fullStats.to_csv('ABTpvotes.csv', index = False)
+if playerVotes == 2:
+    fullStats.to_csv('ABTvoteShare.csv', index = False)
+else:
+    fullStats.to_csv('ABT.csv', index = False)
 
 

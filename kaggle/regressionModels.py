@@ -32,29 +32,37 @@ from statsmodels.stats import stattools as stools
 
 
 
+targ = 'Votes'
 
 
 normalized = 0
 rsampling = 0
 year_holdout = 1
-year_holdout = 2018
+year_holdout = 2019
+playerVotes = 2 #0 for votes, 1 for player votes, 2 for normal vote share
 
-ABT = pd.read_csv("ABT.csv")
+if playerVotes == 1:
+	ABT = pd.read_csv("ABTpvotes.csv")
+if playerVotes == 2:
+	ABT = pd.read_csv("ABTvoteShare.csv")
+else:
+	ABT = pd.read_csv("ABT.csv")
 featuresUsed = ['G', 'MPG', 'PPG','RPG','APG', 'BLKPG', 'FG%', 'WS', 'VORP', 'followers', 'pagerank']
-#ABT = ABT[featuresUsed]
-ABT = ABT[ABT['Votes']!=0]
+featuresUsed = ['G', 'MPG', 'PPG','RPG','APG', 'BLKPG', 'FG%', 'WS', 'VORP']
+ABT = ABT[ABT[targ]!=0]
 ABT = ABT[ABT['followers']!=0]
 
 
-#ABT.plot.scatter(x = 'Votes', y = 'PPG')
-#ABT.plot.scatter(x = 'Votes', y = 'MPG')
-#ABT.plot.scatter(x = 'Votes', y = 'WS')
+
+#ABT.plot.scatter(x = targ, y = 'PPG')
+#ABT.plot.scatter(x = targ, y = 'MPG')
+#ABT.plot.scatter(x = targ, y = 'WS')
 #plt.show()
 #preprocessing
 ABT.fillna(ABT.mean(), inplace = True)
 
 if rsampling:
-	target = ABT['Votes']
+	target = ABT[targ]
 	data = ABT[featuresUsed]
 	if normalized:
 		data = (data-data.min()) / (data.max() - data.min())
@@ -67,14 +75,18 @@ if year_holdout:
 	data_test = data_test[featuresUsed]
 
 	target_train = ABT[ABT['Year']!= year_holdout]
-	target_train = target_train[['Votes']]
+	target_train = target_train[[targ]]
 
 
 	target_test = ABT[ABT['Year'] == year_holdout]
-	target_test2 = target_test['Votes']
-	target_test = target_test[['Votes']]
-	
+	target_test2 = target_test[targ]
+	target_test = target_test[[targ]]
+	if normalized:
+		data_train = (data_train-data_train.min()) / (data_train.max() - data_train.min())
+		data_test = (data_test-data_test.min()) / (data_test.max() - data_test.min())
 
+	
+print ()
 
 
 
@@ -99,7 +111,7 @@ def scoresRegression(y, model):
     	index = df[df.Predicted == item].index[0]
     	#print(index)
     	print(ABT.at[index, 'Player'])
-    #print(df.head(20))
+    #print(df.h(20))
     for i in pred:
     	y.append(i)
 
@@ -107,7 +119,7 @@ def scoresRegression(y, model):
 
 ##test1
 y_svr = []
-svr = SVR(kernel='rbf')
+svr = SVR(kernel='linear')
 #print('\n\n\n SVR:\n')
 #scoresRegression(y_svr, svr)
 
@@ -139,7 +151,7 @@ scoresRegression(y_rf, rf)
 
 def residuals(x, y):
     #print(target_test.head())
-    resid = [i for i in (target_test['Votes'] - x)]
+    resid = [i for i in (target_test[targ] - x)]
     ssr = [i ** 2 for i in resid]
     
     ssrSum = 0
@@ -155,7 +167,7 @@ def residuals(x, y):
 
 
 #residuals
-#svrResid = []
+svrResid = []
 rfResid = []
 knnResid = []
 ridgeResid = []
